@@ -8,16 +8,18 @@
 
 
 <script type="text/javascript">
-    const formLogin = document.querySelector(#login)
-    const formdata = new FormData(formLogin)
+    const formLogin = document.querySelector('#login')
+    const formData = new FormData(formLogin)
 
-    formLogin.addEvenListener('submit', event => {
+    formLogin.addEventListener('submit', event => {
         event.preventDefault()
-        fetch('/api/sigin', {
+        fetch('/api/signin', {
             method: 'POST',
-            body: formdata
+            body: formData
         })
         .then(res => res.json())
-        .then(data => console.log(data))
+        .then(data => {
+            localStorage.setItem('token', data.token)
+        })
     })
 </script>
