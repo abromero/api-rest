@@ -1,0 +1,11 @@
+nodejs
+express
+nodemon
+mongoose
+
+---Libs---
+bcrypt
+crypto
+jwt-simple
+moment
+express-handlebars
